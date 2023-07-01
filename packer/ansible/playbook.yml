@@ -1,0 +1,25 @@
+- name: Image Settings
+  hosts: default
+  become: true
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        upgrade: yes
+        update_cache: yes
+
+    - name: Install required packages
+      apt:
+        name: 
+          - nginx
+          - fail2ban
+        state: latest
+
+    - name: Enable nginx service
+      service:
+        name: nginx
+        enabled: true
+    - name: Enable fail2ban service
+      service:
+        name: fail2ban
+        enabled: true
