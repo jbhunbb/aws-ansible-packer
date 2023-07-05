@@ -11,6 +11,7 @@ packer {
   }
 }
 
+# Linode 이미지 설정
 source "linode" "ubuntu" {
   image             = "linode/ubuntu22.04"
   image_description = "acker TEST Image"
@@ -23,6 +24,7 @@ source "linode" "ubuntu" {
   ssh_username      = "root"
 }
 
+# AWS 이미지 설정
 source "amazon-ebs" "ubuntu" {
   ami_name = "${local.image_name}"
   instance_type = "t3.micro"
@@ -43,7 +45,7 @@ source "amazon-ebs" "ubuntu" {
   ssh_username = "ubuntu"
 }
 
-
+# 이미지 생성 전, 인스턴스에 설정할 사항 작성 (빌드라고 칭함)
 build {
   sources = [
     "source.amazon-ebs.ubuntu",

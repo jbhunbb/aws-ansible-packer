@@ -25,6 +25,17 @@ TO-BE
 * AWS CLI 설치: [AWS-CLI Install Guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html#cliv2-linux-install)
 * Packer 설치: [HashiCorp Packer Install Guide](https://developer.hashicorp.com/packer/downloads)
 * Ansible 설치: [Ansible Install Guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html)
+* variables.pkr.hcl 파일을 참고하여 env 환경 변수로 선언하는 부분 설정하기 ("export APIKEY=xxxx" 등)
+
+## 실행 방법
+1. <pre>$ cd packer</pre>
+2. <pre>$ packer init</pre>
+3. <pre>$ packer build .</pre>
 
 ---
 
+## 참고 문헌
+* [Packer Linode Builder](https://developer.hashicorp.com/packer/plugins/builders/linode)
+* [Packer AWS EBS Builder](https://developer.hashicorp.com/packer/plugins/builders/amazon/ebs)
+* [Packer Ansible Provisioner](https://developer.hashicorp.com/packer/plugins/provisioners/ansible/ansible)
+* [Packer formatdate Function + timestamp](https://developer.hashicorp.com/packer/docs/templates/hcl_templates/functions/datetime/formatdate)
